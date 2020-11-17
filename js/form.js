@@ -24,7 +24,7 @@ function validate_input(){
 }
 
 //add the class "border-red-500"
-function inputEmpty(input) {
+function inputEmpty() {
   const formControl = form.parentElement;
   formControl.className = "border-red-500";
 }
@@ -33,8 +33,6 @@ function inputEmpty(input) {
 // Event listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-console.log("aaa");
-validate_input();
 
 })
 
