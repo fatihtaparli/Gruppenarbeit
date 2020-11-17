@@ -9,3 +9,32 @@
  * https://github.com/axios/axios
  * 
  */
+
+const form = document.getElementById("support-form");
+const fullname = document.getElementById("input-fullname");
+const number = document.getElementById("input-number");
+const email = document.getElementById("input-email");
+const message = document.getElementById("input-message");
+const privacy = document.getElementById("input-privacy");
+
+function validate_input(){
+  if(number.value===""){
+    inputEmpty()
+  }
+}
+
+//add the class "border-red-500"
+function inputEmpty(input) {
+  const formControl = form.parentElement;
+  formControl.className = "border-red-500";
+}
+
+
+// Event listeners
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+console.log("aaa");
+validate_input();
+
+})
+
