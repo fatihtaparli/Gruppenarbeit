@@ -18,6 +18,70 @@
     <link href="./css/main.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+    </style>
+
+
   </head>
 
   <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
@@ -117,6 +181,26 @@
     </div>
 
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+          },
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+    <!-- Swiper End -->
 
 
     <section class="bg-white py-8">
@@ -312,7 +396,6 @@
     </footer>
 
     <button id="return-to-top" class="visible"><i class="icon-chevron-up"></i></button>
-
 
     <script src="./js/form.js"></script>
     <script src="./js/swiper.js"></script>
