@@ -17,22 +17,36 @@ const email = document.getElementById("input-email");
 const message = document.getElementById("input-message");
 const privacy = document.getElementById("input-privacy");
 
-function validate_input(){
-  if(number.value===""){
-    inputEmpty()
-  }
+
+
+// Check required fields
+function checkRequired(inputArr) {
+  let isRequired = false;
+  inputArr.forEach(function(input) {
+    if (input.value.trim() === '') {
+      inputEmpty();
+      //showError(input, `${getFieldName(input)} is required`);
+      isRequired = true;
+    } 
+  });
+
+  return isRequired;
 }
 
 //add the class "border-red-500"
 function inputEmpty() {
   const formControl = form.parentElement;
   formControl.className = "border-red-500";
+  ;
 }
 
 
 // Event listeners
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault();  
+  if(!checkRequired([fullname, number, email,message,])){
+  
+  }
 
 })
 
