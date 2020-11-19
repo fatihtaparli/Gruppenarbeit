@@ -4,3 +4,11 @@
  * 2. Clear the input by clicking the "x" button
  * 
  */
+
+function search(){
+    document.getElementById("searchbar").classList.toggle("hidden");
+}
+
+function clear_searchbar(){
+    document.getElementById("input").value = "";
+}

@@ -30,7 +30,6 @@ function set_del_local_storage(input){
     //if(allStorage().includes(input)){
         localStorage.removeItem(input);
         keys.splice(input,1);
-        console.log(keys);
         liked_elements[input].classList.toggle('liked');
     }
     else{
